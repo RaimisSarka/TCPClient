@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_background_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/arduino_960_720"
+    tools:context=".SettingsActivity">
+
+    <android.support.constraint.ConstraintLayout
+        android:id="@+id/panel_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/layout_shape"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/IP_layout"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:background="@drawable/layout_shape"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <Button
+                android:id="@+id/set_port_btn"
+                style="@style/ButtonStyle"
+                android:layout_marginTop="8dp"
+                android:text="SET PORT"
+                android:textColor="@color/colorButtonText"
+                app:layout_constraintStart_toStartOf="@+id/port_editText"
+                app:layout_constraintTop_toBottomOf="@+id/port_editText"
+                tools:text="SET PORT" />
+
+            <EditText
+                android:id="@+id/port_editText"
+                android:layout_width="80dp"
+                android:layout_height="30dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/edit_text_shape"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorEditTextText"
+                app:layout_constraintStart_toStartOf="@+id/set_IP_btn"
+                app:layout_constraintTop_toBottomOf="@+id/set_IP_btn"
+                tools:text="3020" />
+
+            <Button
+                android:id="@+id/set_IP_btn"
+                style="@style/ButtonStyle"
+                android:text="SET IP"
+                android:textColor="@color/colorButtonText"
+                app:layout_constraintStart_toStartOf="@+id/ip_first_dig_editText"
+                app:layout_constraintTop_toBottomOf="@+id/ip_first_dig_editText"
+                tools:text="SET IP" />
+
+            <Button
+                android:id="@+id/ping_btn"
+                style="@style/ButtonStyle"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="16dp"
+                android:text="PING"
+                android:textColor="@color/colorButtonText"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/ping_label_textView"
+                app:layout_constraintTop_toBottomOf="@+id/ping_label_textView"
+                tools:text="PING" />
+
+            <TextView
+                android:id="@+id/IP_label_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Set IP"
+                android:textColor="@color/colorLabelTextView"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Set IP" />
+
+            <TextView
+                android:id="@+id/ping_label_textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="PINGING..."
+                android:textColor="@color/colorLabelTextView"
+                app:layout_constraintStart_toStartOf="@+id/set_IP_btn"
+                app:layout_constraintTop_toBottomOf="@+id/set_port_btn"
+                tools:text="PINGING..." />
+
+            <EditText
+                android:id="@+id/ip_fourth_dig_editText"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/edit_text_shape"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorEditTextText"
+                app:layout_constraintBottom_toBottomOf="@+id/ip_third_dig_editText"
+                app:layout_constraintStart_toEndOf="@+id/ip_third_dig_editText"
+                app:layout_constraintTop_toTopOf="@+id/ip_third_dig_editText"
+                tools:text="1" />
+
+            <EditText
+                android:id="@+id/ip_third_dig_editText"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/edit_text_shape"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorEditTextText"
+                app:layout_constraintBottom_toBottomOf="@+id/ip_second_dig_editText"
+                app:layout_constraintStart_toEndOf="@+id/ip_second_dig_editText"
+                app:layout_constraintTop_toTopOf="@+id/ip_second_dig_editText"
+                app:layout_constraintVertical_bias="0.529"
+                tools:text="1" />
+
+            <EditText
+                android:id="@+id/ip_second_dig_editText"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/edit_text_shape"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorEditTextText"
+                app:layout_constraintBottom_toBottomOf="@+id/ip_first_dig_editText"
+                app:layout_constraintStart_toEndOf="@+id/ip_first_dig_editText"
+                app:layout_constraintTop_toTopOf="@+id/ip_first_dig_editText"
+                tools:text="168" />
+
+            <EditText
+                android:id="@+id/ip_first_dig_editText"
+                android:layout_width="40dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/edit_text_shape"
+                android:ems="10"
+                android:inputType="numberDecimal"
+                android:textColor="@color/colorEditTextText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/IP_label_textView"
+                tools:text="192" />
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.constraint.ConstraintLayout>
+
+</android.support.constraint.ConstraintLayout>
