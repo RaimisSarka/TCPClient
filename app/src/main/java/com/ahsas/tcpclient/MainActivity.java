@@ -79,8 +79,8 @@ public class MainActivity extends AppCompatActivity {
     public class SendDataToServer extends AsyncTask<String, Void, Void>{
 
         //TODO use shared data
-        String dstAddress = "80.50.0.37";
-        int dstPort = 3020;
+        String dstAddress = mIPaddress;
+        int dstPort = mPort;
         String response = "";
 
         public SendDataToServer() {
@@ -130,10 +130,10 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences preferences = getSharedPreferences(MY_PREF_NAME, MODE_PRIVATE);
         String restoredIP = preferences.getString("IP", "127.0.0.1");
         int restoredPort = preferences.getInt("port", 3020);
-        if (!restoredIP.equals("127.0.0.1")){
+        if (!restoredIP.equals(mIPaddress)){
             mIPaddress = restoredIP;
         }
-        if (restoredPort != 3020) {
+        if (restoredPort != mPort) {
             mPort = restoredPort;
         }
     }
